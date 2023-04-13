@@ -29,9 +29,9 @@ public class StepDefinition {
         // Write code here that turns the phrase above into concrete actions
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("start-maximized");
+       // options.addArguments("start-maximized");
         options.addArguments("–no-sandbox");
-
+        options.addArguments("headless");
         driver = new ChromeDriver(options);
         driver.get("https://www.svtplay.se/");
 
@@ -57,7 +57,7 @@ public class StepDefinition {
         // Write code here that turns the phrase above into concrete actions
 
         String svtTitle1=  driver.getTitle();
-        assertEquals("SVT Play", svtTitle1);
+        assertEquals("SVT Play1", svtTitle1);
         driver.quit();
         //throw new io.cucumber.java.PendingException();
     }
